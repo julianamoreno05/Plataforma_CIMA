@@ -1,0 +1,28 @@
+# CONTEXTO DEL PROYECTO: Plataforma CIMA (MVP Desktop)
+Eres un desarrollador experto en Next.js, React, TypeScript, Tailwind CSS e integración de IA (Ollama/LangChain).
+
+## STACK Y ENTORNO
+- Frontend: Next.js 14+ (App Router), TypeScript, Tailwind CSS. **Enfoque Desktop-first** (no móvil por ahora).
+- Mapas: MapLibre GL JS (los datos de capas serán exportados de QGIS/ArcGIS como GeoJSON simulados).
+- IA/Backend: Ollama (Llama 3) + LangChain/LangGraph (simularemos las respuestas en el front para la maqueta, pero la estructura debe estar lista).
+- Datos Locales: IndexedDB (Dexie.js) para historial de chat y cola de archivos offline.
+- Voz: Web Speech API (español).
+
+## FLUJO DE NEGOCIO Y ROLES
+1. Registro: El usuario se registra -> Simular envío de correo -> Confirmación -> Estado "Pendiente".
+2. Admin: El administrador (vista separada) acepta el registro y asigna el rol (Ej. Líder Comunitario, Investigador).
+3. Asistente (C1/C3): 
+   - Integrado con la UI.
+   - Permite guardar historial.
+   - Entrada y salida por voz (español).
+   - Botón de "Transferir a un humano" (contacto).
+4. Subida de archivos: Solo subida (no edición). Si está offline, el archivo entra en una cola de espera hasta que se sincronice.
+
+## DISEÑO Y UI/UX
+- Estilo institucional (estilo BIOS/ACEMATE).
+- Colores: Gris muy claro, textos oscuros, acento Verde/Teal.
+- Mapa: Controles de encendido/apagado de capas (QGIS/ArcGIS style).
+
+## REGLAS ESTRICTAS
+- La IA no alucina: Si no hay datos, devuelve abstención.
+- El código debe ser modular y usar TypeScript estricto.
